@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sierrah Tibayan — Photographer</title>
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<!-- JetBrains Mono (for labels / meta / mono accents — Helvetica Neue relies on system fonts) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== Mobile top bar : brand upper-left, burger upper-right ===== -->
+<header class="mobile-topbar d-lg-none">
+  <a href="#" class="mobile-brand-link" data-page="featured">
+    <span class="brand-name mobile-brand-name">Sierrah Tibayan</span>
+    <span class="brand-sub">Photographer</span>
+  </a>
+  <button class="burger-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Open navigation">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- ===== Sidebar navigation ===== -->
+<nav class="offcanvas-lg offcanvas-start sidebar" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+
+  <div class="sidebar-inner">
+    <div class="offcanvas-header d-lg-none">
+      <span class="brand-name" id="sidebarLabel">Sierrah Tibayan</span>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" data-bs-target="#sidebar" aria-label="Close"></button>
+    </div>
+
+    <a href="#" class="sidebar-top d-none d-lg-block brand-link" data-page="featured" aria-label="Go to home page">
+      <div class="brand-name">Sierrah Tibayan</div>
+      <div class="brand-sub">Photographer</div>
+    </a>
+
+    <div class="sidebar-tag">
+      <span class="tag-title">Photography Portfolio</span>
+    </div>
+
+    <ul class="nav flex-column sidebar-nav" id="pageNav">
+      <li class="nav-item"><a class="nav-link active" href="#" data-page="featured">Featured</a></li>
+      <li class="nav-item"><a class="nav-link" href="#" data-page="portraits">Portraits</a></li>
+      <li class="nav-item"><a class="nav-link" href="#" data-page="food">Food / Product</a></li>
+      <li class="nav-item"><a class="nav-link" href="#" data-page="preevents">Pre-Events</a></li>
+      <li class="nav-item"><a class="nav-link" href="#" data-page="events">Events</a></li>
+      <li class="nav-item"><a class="nav-link" href="#" data-page="about">About + Contact</a></li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <a href="https://instagram.com/sierrahtibayan" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Visit Instagram profile">
+        <i class="bi bi-instagram"></i>
+      </a>
+      <p class="copyright">© Copyright<br>All rights reserved</p>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== Main content ===== -->
+<main class="main-content">
+
+  <!-- Dynamically-built gallery + detail pages are injected here by script.js -->
+  <div id="galleryRoot"></div>
+
+  <!-- ABOUT / CONTACT (static) -->
+  <section class="page" id="page-about">
+    <div class="page-header">
+      <h1 class="page-title">About + Contact</h1>
+    </div>
+
+    <div class="about-wrap">
+
+      <div class="about-top">
+        <figure class="about-photo">
+          <img src="https://picsum.photos/seed/sierrah-portrait/900/1200" alt="Sierrah Tibayan portrait">
+        </figure>
+
+        <div class="about-text">
+          <p class="about-lede">Sierrah Tibayan is a photographer working across portraiture, documentary, and still life.</p>
+          <p>Based in Manila, the work moves between studio sessions, street documentary, and event coverage — always shot with intention and a quiet, observational eye. Available for portrait sessions, editorial commissions, and event coverage.</p>
+        </div>
+      </div>
+
+      <div class="about-columns">
+        <div class="get-in-touch">
+          <h2 class="section-title">Get In Touch</h2>
+          <ul class="touch-list">
+            <li>
+              <span class="touch-label">Facebook</span>
+              <a href="https://facebook.com/sierrahtibayanphoto" target="_blank" rel="noopener noreferrer" class="touch-link">facebook.com/sierrahtibayanphoto</a>
+            </li>
+            <li>
+              <span class="touch-label">Instagram</span>
+              <a href="https://instagram.com/sierrahtibayan" target="_blank" rel="noopener noreferrer" class="touch-link">@sierrahtibayan</a>
+            </li>
+            <li>
+              <span class="touch-label">Email</span>
+              <a href="mailto:hello@sierrahtibayan.com?subject=Photography%20Inquiry" class="touch-link">hello@sierrahtibayan.com</a>
+            </li>
+            <li>
+              <span class="touch-label">Location</span>
+              <span class="touch-value">Manila, Philippines</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="send-message">
+          <h2 class="section-title">Send Message</h2>
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="form-field">
+              <label for="cf-name">Name</label>
+              <input type="text" id="cf-name" name="name" required autocomplete="name">
+            </div>
+            <div class="form-field">
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" required autocomplete="email">
+            </div>
+            <div class="form-field">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== Fullscreen lightbox (opened from within detail pages) ===== -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">
+    <i class="bi bi-x-lg"></i>
+  </button>
+  <div class="lightbox-inner">
+    <img src="" alt="" id="lightboxImg">
+    <div class="lightbox-caption">
+      <span class="lightbox-title" id="lightboxTitle"></span>
+      <span class="lightbox-meta" id="lightboxMeta"></span>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
